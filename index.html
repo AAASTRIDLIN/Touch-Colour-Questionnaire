@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/formbuilder.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/formrender.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome/font-awesome.min.css">
-    <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,15 +16,17 @@
             <div class="fb">
                 <div class="fb-toolbar">
                     <span>FormBuilder</span>
-                    <input type="button" id="btn_clear" value="Clear" />
-                    <input type="button" id="btn_save" value="Save" />
-                    <input type="button" id="btn_view" value="Preview" />
+                    <input type="button" class="btn btn-dark" id="btn_clear" value="Clear" />
+                    <input type="button" class="btn btn-dark" id="btn_save" value="Save" />
+                    <input type="button" class="btn btn-dark" id="btn_view" value="Preview" />
                 </div>
                 <div class="fb-toolbox">
                     <p class="title">Tools</p>
                     <ul>
                         <li data-ctrl="h"><span><i class="fa fa-header"></i><span>Heading</span></span></li>
+                        <li data-ctrl="ColourSelector"><span><i class="fa fa-spinner"></i><span>ColourSelector</span></span></li>
                         <!--<li data-ctrl="button"><span><i></i><span>Button</span></span></li>-->
+                        <li data-ctrl="colorslider"><span><i class="fa fa-sliders"></i><span>Colour Slider</span></span></li>
                         <li data-ctrl="checkbox"><span><i class="fa fa-check-square-o"></i><span>CheckBox</span></span></li>
                         <li data-ctrl="checkboxgroup"><span><i class="fa fa-check-square"></i><span>CheckBox Group</span></span></li>
                         <li data-ctrl="color"><span><i class="fa fa-dashboard"></i><span>Color</span></span></li>
@@ -44,7 +46,7 @@
                         <li data-ctrl="select"><span><i class="fa fa-list-alt"></i><span>Select</span></span></li>
                         <li data-ctrl="textarea"><span><i class="fa fa-list"></i><span>TextArea</span></span></li>
                         <li data-ctrl="text"><span><i class="fa fa-square-o"></i><span>TextBox</span></span></li>
-                        <li data-ctrl="ColourSelector"><span><i class="fa  fa-spinner"></i><span>ColourSelector</span></span></li>
+
                     </ul>
                 </div>
                 <div class="fb-designer">
@@ -68,5 +70,6 @@
     <script src="js/formbuilder.js"></script>
     <script src="js/formrender.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/saveForm.js"></script>
 </body>
 </html>

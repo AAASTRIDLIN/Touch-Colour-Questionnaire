@@ -93,7 +93,7 @@
                 var p_designer = { x: designer.offsetLeft, y: designer.offsetTop, w: designer.offsetWidth, h: designer.offsetHeight };//designer coordinate
 
                 //mouse in design area
-                //if ($('.fb-designer')[0].contains(target)) {
+
                 if (p_event.x > p_designer.x && p_event.x < (p_designer.x + p_designer.w) && p_event.y > p_designer.y && p_event.y < (p_designer.y + p_designer.h)) {
                     var controlItem = $("<li></li>").append(createControl(tag));
                     $(".fb-designer ul").append(controlItem);//add components in designer
@@ -297,21 +297,35 @@
             var $ctrl = $(".fb-designer").find("#" + propId);
             var ctrlId = $ctrl.prop("id");
             var ctrlType = $ctrl.attr("type");
+            //check if length=0
+            var ctrlColor =$ctrl.find(".colorsquare");
+            // console.log(ctrlColor);
             var opText = ctrlType;
+            if(ctrlColor.length>0){
+               $ctrl.append("<div name='" + timestamp + "'class='option col-lg'><input type='" + ctrlType + "' name='" + ctrlId + "' /><div class = \"colorsquare\" style = \"background-color:#000000\"></div>");
+            }
+            else{
+               $ctrl.append("<div name='" + timestamp + "'class='option'><input type='" + ctrlType + "' name='" + ctrlType + '-' + ctrlId + "' /><span>" + ctrlType + "</span></div>");
+            }
 
-            $ctrl.append("<div name='" + timestamp + "'class='option'><input type='" + ctrlType + "' name='" + ctrlType + '-' + ctrlId + "' /><span>" + ctrlType + "</span></div>");
 
             if ($ctrl.get(0).tagName == 'SELECT') { ctrlType = "radio"; opText = "Option"; }
-
+            // console.log($ctrl.get(0).tagName);
             var $prop = $(".fb-property ul li").find(".prop");
-            $prop.append("<div name='" + timestamp + "'><input type='" + ctrlType + "' name='prop-" + ctrlType + '-' + ctrlId + "' class='op-value' /><input type='text' class='op-text' value='" + opText + "'><span class='op-remove'> x</span></div>");
 
+            if(ctrlColor.length>0){
+               $prop.append("<div name='" + timestamp + "'><input type='" + ctrlType + "' name='prop-" + ctrlType + '-' + ctrlId + "' class='op-value' /><input type='color' class='op-color' value='#000000'><span class='op-remove'> x</span></div>");
+            }
+            else{
+               $prop.append("<div name='" + timestamp + "'><input type='" + ctrlType + "' name='prop-" + ctrlType + '-' + ctrlId + "' class='op-value' /><input type='text' class='op-text' value='" + opText + "'><span class='op-remove'> x</span></div>");
+            }
             setProperty(propId);
         });;
 
         //save changes
         $("#btn_save").click(function () {
-            formBuilder.save();
+            // formBuilder.save();
+            formBuilder.exportSavepage();
             alert("You have save the changes.")
         });
 
@@ -360,10 +374,11 @@
 
             var $control, control, ctrlLabel;
             var contains = [];
-
+            //change to wrapper later since color is not shown in slider in fb.designer
             $(".fb-designer ul>li").each(function () {
 
                 $control = $(this).find(":nth-child(2)");
+                // console.log($control);
                 ctrlLabel = $control.attr('data-label');
 
                 if (typeof ctrlLabel == 'undefined') {
@@ -377,6 +392,7 @@
                 control.required = $control.attr("required");
                 control.label = ctrlLabel;
                 control.content = $control.html();
+                // console.log(control.content);
                 control.text = $control.text();
                 control.options = $control.attr("data-options");
                 contains.push(control);
@@ -391,10 +407,13 @@
 
             var formData = JSON.stringify(form);
             // console.log(formData);
-
+            // console.log(formData);
             return formData;
         }
 
+        formBuilder.exportSavepage = function(){
+          insertIntoTemplate();
+        }
         //clear form design
         formBuilder.clear = function () {
             $(".fb-designer ul>li").remove();
@@ -423,7 +442,6 @@
 
             var timestamp = new Date().getTime();
             var ctrlLabel, ctrlValue, inputType, ctrlGroup = false;
-
             var tag, ctrlData = {};
 
             switch (type) {
@@ -474,12 +492,22 @@
                tag = "ColourSelector";
                ctrlData.type = "checkbox";
                ctrlData.label = "Options of colour";
-               ctrlData.color = "hsl(120,100%, 50%)";
+               ctrlData.color = "#000000";
                break;
-                case 'radiogroup': tag = "radiogroup";
-                ctrlData.type = "radio";
-                ctrlData.label = "RadioGroup";
+               case 'radiogroup':
+                  tag = "radiogroup";
+                  ctrlData.type = "radio";
+                  ctrlData.label = "RadioGroup";
                break;
+
+               case 'colorslider':
+                  tag ="colorslider";
+                  ctrlData.type = "range";
+                  ctrlData.label = "Range of colour lightness";
+                  ctrlData.min = 0;
+                  ctrlData.max = 100;
+                  ctrlData.color = "0,100,50";
+                  break;
 
                 case 'select': tag = type; ctrlData.label = "Select";
                     break;
@@ -497,7 +525,6 @@
             if (ctrlData.label != undefined) {
                 $(div).append(createLabel(ctrlData.label));
             }
-
             $(div).append(createTag(tag, ctrlData));
             var item = createItem(div);
 
@@ -524,7 +551,7 @@
 
         //tag
         function createTag(tag) {
-
+           //argument is control elements
             var attrs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
             var element;
 
@@ -536,6 +563,11 @@
             else if(tag.toUpperCase()=="COLOURSELECTOR"){
                tag = "input";
                element = createInputColourGroup(tag,attrs);
+            }
+            else if (tag.toUpperCase()=="COLORSLIDER"){
+               tag= "input";
+               element = createInputSlider(tag,attrs);
+               // console.log(tag);
             }
             else if (tag.toUpperCase() == "SELECT") {
                 element = createSelect(tag, attrs);
@@ -582,33 +614,94 @@
             return element;
         }
 
+        function createInputSlider(tag,ctrlData){
+
+             var timestamp = new Date().getTime();
+             var element = document.createElement("div");//label tag
+             // console.log(ctrlData);
+            $(element).prop("id", ctrlData.id ? ctrlData.id : tag + "-" + timestamp);
+            $(element).prop("name", element.id);
+            $(element).addClass("container");
+            $(element).attr("type", ctrlData.type);
+            $(element).attr("required", ctrlData.required);
+            if (typeof ctrlData.options == 'undefined') {
+               ctrlData.options="[{\"type\":\""+ctrlData.type+"\",\"name\":\"option-slider-" + ctrlData.type + "\",\"value\": \"50\",\"min\": \""+ctrlData.min+"\",\"max\":\""+ctrlData.max+"\", \"color\":\""+ctrlData.color+"\"}]";
+
+            }
+            // console.log(ctrlData);
+            var options = JSON.parse(ctrlData.options);
+            var box = document.createElement("div");
+
+            // console.log(options);
+             //create input tag and attributes
+             var ctrl = document.createElement(tag);
+             ctrl.type = options[0].type;
+             ctrl.name = options[0].type + "-" + element.name;
+             ctrl.max = options[0].max;
+             ctrl.min = options[0].min;
+             ctrl.value = options[0].value;
+             // TO DO CHANGE COLOR OF RANGE SLIDER
+             // var lightscale = colourSliderboxes(ctrl.max,ctrl.min,options[0].color);
+             // ctrl.style= "background-image: linear-gradient(to right,"+hslToHex(options[0].color,options[0].max)+","+ hslToHex(options[0].color,options[0].min)+")";
+             ctrl.className = "slider"
+             box.className = "slidercontainer";
+             box.appendChild(ctrl);
+
+             $(element).append(box);
+            var dataOptions = JSON.stringify(options);
+            $(element).attr("data-options", dataOptions);
+
+            if (ctrlData.label != undefined) {
+                $(element).attr("data-label", ctrlData.label);
+            }
+
+            return element;
+        }
+        // todo change color of scale bar
+        function colourSliderboxes(max,min,hsl){
+           var td= document.createElement("td");
+           var tbody = document.createElement("tbody");
+           var table = document.createElement("table");
+           table.className("tableSlider");
+           for(i = max;i<=max;i++){
+             var colorbox = document.createElement("div");
+             colorbox.className= "pointer";
+             colorbox.id = "ligpointer"+i;
+             // colorbox.display = "none";
+             td.style = "position:relative; padding =0;"
+             td.appendChild(colorbox);
+             tbody.appendChild(td);
+          }
+          return table
+        }
         //create color selector in control window
         function createInputColourGroup(tag, ctrlData) {
 
            var timestamp = new Date().getTime();
            var element = document.createElement("div");//label tag
-
            $(element).prop("id", ctrlData.id ? ctrlData.id : tag + "-" + timestamp);
            $(element).prop("name", element.id);
-           $(element).addClass("control");
+           $(element).addClass("container");
            $(element).attr("type", ctrlData.type);
            $(element).attr("required", ctrlData.required);
 
-           if (typeof ctrlData.options == 'undefined') {//default
-              ctrlData.options = "[{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "group-1495681323989\",\"text\":\"" + ctrlData.type + " 0\",\"checked\":false,\"value\":false,"+"\"color\":"+ctrlData.color
-               + "},{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "group-1495681323989\",\"text\":\"" + ctrlData.type + " 1\",\"checked\":false,\"value\":false,\"color\":"+ctrlData.color
-               + "},{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "group-1495681323989\",\"text\":\"" + ctrlData.type + " 2\",\"checked\":false,\"value\":false,\"color\":"+ctrlData.color
-               + "}]";
+           if (typeof ctrlData.options == 'undefined') {
+              ctrlData.options = "[{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-colour-" + ctrlData.type + "\",\"text\":\"" + ctrlData.type + " 0\",\"checked\":false,\"value\":false,"+"\"color\":\""+ctrlData.color
+               + "\"},{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-colour" + ctrlData.type + "\",\"text\":\"" + ctrlData.type + " 1\",\"checked\":false,\"value\":false,\"color\":\""+ctrlData.color
+               + "\"},{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-colour" + ctrlData.type + "\",\"text\":\"" + ctrlData.type + " 2\",\"checked\":false,\"value\":false,\"color\":\""+ctrlData.color
+               + "\"}]";
 
            }
-           console.log(ctrlData.options);
+           // console.log(ctrlData.options);
            var options = JSON.parse(ctrlData.options);
            var option;
            var lbl, ctrl;
            for (var i = 0; i < options.length; i++) {
 
               box = document.createElement("div");
-              lbl = document.createElement("span");
+              lbl = document.createElement("div");
+              colrow = document.createElement("div");
+
 
               option = {};
               option.type = options[i].type;
@@ -616,23 +709,24 @@
               option.text = options[i].text;
               option.checked = options[i].checked;
               option.value = options[i].value;
+              option.color = options[i].color;
               lbl.setAttribute("class","colorsquare");
-              //set colour with option.text later
-              lbl.innerHTML = option.text;
-              // console.log(lbl);
 
+              lbl.style = "background-color: "+option.color;
+
+              colrow.setAttribute("class","row");
               ctrl = document.createElement(tag);
               ctrl.type = ctrlData.type;
               ctrl.name = ctrlData.type + "-" + element.name;
 
               box.setAttribute("name", i);
-              box.className = "option";
+              box.className = "option col-lg";
               box.appendChild(ctrl);
 
               box.appendChild(lbl);
               $(element).append(box);
            }
-
+           $(element).addClass("row");
            var dataOptions = JSON.stringify(options);
            $(element).attr("data-options", dataOptions);
 
@@ -655,9 +749,9 @@
             $(element).attr("required", ctrlData.required);
 
             if (typeof ctrlData.options == 'undefined') {//default
-                ctrlData.options = "[{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "group-1495681323989\",\"text\":\"" + ctrlData.type + " 0\",\"checked\":false,\"value\":false}"
-                                + ",{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "group-1495681323989\",\"text\":\"" + ctrlData.type + " 1\",\"checked\":false,\"value\":false}"
-                                + ",{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "group-1495681323989\",\"text\":\"" + ctrlData.type + " 2\",\"checked\":false,\"value\":false}]";
+                ctrlData.options = "[{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "\",\"text\":\"" + ctrlData.type + " \",\"checked\":false,\"value\":false}"
+                 + ",{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "\",\"text\":\"" + ctrlData.type + " 1\",\"checked\":false,\"value\":false}"
+                 + ",{\"type\":\"" + ctrlData.type + "\",\"name\":\"option-" + ctrlData.type + "\",\"text\":\"" + ctrlData.type + " 2\",\"checked\":false,\"value\":false}]";
             }
             var options = JSON.parse(ctrlData.options);
             var option;
@@ -675,7 +769,7 @@
                 option.value = options[i].value;
 
                 lbl.innerHTML = option.text;
-
+                lbl.className = "groupInput";
                 ctrl = document.createElement(tag);
                 ctrl.type = ctrlData.type;
                 ctrl.name = ctrlData.type + "-" + element.name;
@@ -705,9 +799,6 @@
             var timestamp = new Date().getTime();
             var element = document.createElement(tag);
 
-            //element.id = tag + "-" + timestamp;
-            //element.name = '';
-            //element.title = '';
             $(element).prop("id", ctrlData.id ? ctrlData.id : tag + "-" + timestamp);
             $(element).attr("required", ctrlData.required);
 
@@ -746,7 +837,7 @@
             return element;
         }
 
-        //show property of the form
+        //show property of the form (window)
         function showFormProperty(id) {
             $(".fb-property ul li").remove();
 
@@ -759,11 +850,10 @@
         }
 
         function showProperty(id) {
-
+           //remove last property window
             $(".fb-property ul li").remove();
 
             var eleRequired = $("#" + id).attr("required");
-            //var eleName = $("#" + id).prop("name");
             var eleLabel = $("#" + id).attr("data-label");
             var eleValue = $("#" + id).val();
             var eleText = $("#" + id).text();
@@ -779,18 +869,35 @@
 
             if (eleOptions != 'undefined' && eleOptions != null) {
                 var dataProp = JSON.parse(eleOptions);
-                // console.log(dataProp);
+                //console.log(dataProp);
                 var div = "<div class='prop'>";
-                for (var i = 0; i < dataProp.length; i++) {
-                    div += "<div name='" + i + "'>";
-                    div += "<input type='" + dataProp[i].type + "' name='prop-" + dataProp[i].type + '-' + id + "' class='op-value' " + (dataProp[i].checked ? 'checked' : '') + " />";
-                    div += "<input type='text' class='op-text' value='" + dataProp[i].text + "' />";
-                    div += "<span class='op-remove'> x</span>";
-                    div += "</div>";
+                if(id.startsWith("ColourSelector")){
+                   for (var i = 0; i < dataProp.length; i++) {
+                       div += "<div name='" + i + "'>";
+                       div += "<input type='" + dataProp[i].type + "' name='prop-" + dataProp[i].type + '-' + id + "' class='op-value' " + (dataProp[i].checked ? 'checked' : '') + " />";
+                       div += "<input type='color' class='op-color' value ="+dataProp[i].color+" />";
+                       div += "<span class='op-remove'> x</span>";
+                       div += "</div>";
+                   }
+                   div += "</div><span class='op-add'>+</span>";
                 }
-                div += "</div><span class='op-add'>+</span>";
+                else if (id.startsWith("colorslider")){
+                   div += "<div name='rangeInput'>min value<input type='number' name = 'prop-"+dataProp[0].type+"-minvalue'class='op-value' value ="+dataProp[0].min+" /></div>";
+                   div += "<div name='rangeInput'>max value<input type='number' name = 'prop-"+dataProp[0].type+"-maxvalue'class='op-value' value ="+dataProp[0].max+" /></div>";
+
+                }
+                else{
+                   for (var i = 0; i < dataProp.length; i++) {
+                       div += "<div name='" + i + "'>";
+                       div += "<input type='" + dataProp[i].type + "' name='prop-" + dataProp[i].type + '-' + id + "' class='op-value' " + (dataProp[i].checked ? 'checked' : '') + " />";
+                       div += "<input type='text' class='op-text' value='" + dataProp[i].text + "' />";
+                       div += "<span class='op-remove'> x</span>";
+                       div += "</div>";
+                   }
+                   div += "</div><span class='op-add'>+</span>";
+                }
+
                 $(".fb-property ul").append('<li><label>Options</label>' + div + '</li>');
-                console.log(div);
             }
             else {
                 $(".fb-property ul").append('<li><label>Text</label><input id="txt_prop_text" type="text" value="' + eleText + '" /></li>');
@@ -798,49 +905,77 @@
             }
         }
 
-        //property setting
+        //property setting & save
         function setProperty(id) {
 
             var eleModel = {};
-
+            //find required property
             eleModel.required = $(".fb-property ul li").find("#txt_prop_required").prop("checked");
-            //eleModel.name = $(".fb-property ul li").find("#txt_prop_name").val();
+
             eleModel.value = $(".fb-property ul li").find("#txt_prop_value").val();
+
             eleModel.text = $(".fb-property ul li").find("#txt_prop_text").val();
+            //find label value
             eleModel.label = $(".fb-property ul li").find("#txt_prop_label").val();
 
-            var option, options = [];
-            $(".fb-property ul li").find(".prop>div").each(function (i) {
+            var option={}, options = [];
+//find option values
+            if(id.startsWith("colorslider")){
+               var dataOptions = JSON.parse($(".fb-designer").find("#" + id).attr("data-options"));
+               option.color = dataOptions[0].color;
+               $(".fb-property ul li").find(".prop>div").each(function(i){
+                  var $v =  $(this).find(".op-value");
+                  option.type = $v.get(0).type;
+                  if(i==0) option.min = $v.val();
+                  else option.max = $v.val();
+               });
+               $(".fb-designer").find("#" + id+" .slider").attr("min",option.min);
+              $(".fb-designer").find("#" + id+" .slider").attr("max",option.max);
+              // $(".fb-designer").find("#" + id+" .slider").attr("style","background-image: linear-gradient(to right,"+hslToHex(option.color,option.max)+","+ hslToHex(option.color,option.min)+")");
+              // options.push(option);
+           }
+            else{
+               $(".fb-property ul li").find(".prop>div").each(function (i) {
+                   var $v = $(this).find(".op-value");
+                   var $t = $(this).find(".op-text");
+                   var $c = $(this).find(".op-color");
+                   option.type = $v.get(0).type;//tagName;
+                   option.name = "";
+                   option.text = $t.val();
+                   option.checked = $v.prop("checked");
+                   option.value = i;
+                   option.color = $c.val();
 
-                var $v = $(this).find(".op-value");
-                var $t = $(this).find(".op-text");
+                   options.push(option);
 
-                option = {};
-                option.type = $v.get(0).type;//tagName;
-                option.name = "";
-                option.text = $t.val();
-                option.checked = $v.prop("checked");
-                option.value = i;
-                options.push(option);
+                   var op = $(".fb-designer").find("#" + id).children(".option").eq(i);
+                   op.find("input").prop("checked", option.checked);
+                   op.find("span").html(option.text);
+                   if(option.color!=undefined){
+                     $(".colorsquare").eq(i).attr("style","background-color:"+option.color);
+                   }
 
-                var op = $(".fb-designer").find("#" + id).children(".option").eq(i);
-                op.find("input").prop("checked", option.checked);
-                op.find("span").html(option.text);
-            });
+               });
+            }
 
             if (options.length > 0) {
                 eleModel.options = options;
                 var dataOption = JSON.stringify(eleModel.options);
                 $(".fb-designer").find("#" + id).attr("data-options", dataOption);
+
             }
 
-            //$(".fb-designer").find("#" + id).prop("required", eleModel.required);
+            //change value in required
             $(".fb-designer").find("#" + id).attr("required", eleModel.required);
-            //$(".fb-designer").find("#" + id).prop("name", eleModel.name);
-            if (eleModel.value != "undifined" && options.length <= 0) { $(".fb-designer").find("#" + id).val(eleModel.value); }
-            if (eleModel.text != "undifined" && options.length <= 0) { $(".fb-designer").find("#" + id).text(eleModel.text); }
+
+            //if there is no values
+            if (eleModel.value != "undefined" && options.length <= 0) { $(".fb-designer").find("#" + id).val(eleModel.value); }
+            if (eleModel.text != "undefined" && options.length <= 0) { $(".fb-designer").find("#" + id).text(eleModel.text); }
+
             $(".fb-designer").find("#" + id).attr("data-label", eleModel.label);
+
             $(".fb-designer").find("#" + id).prev("label").text(eleModel.label);
+
             if (eleModel.required) { $(".fb-designer").find("#" + id).prev("label").append("<span class='required'>*</span>"); }
         }
 

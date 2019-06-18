@@ -7,12 +7,12 @@ var FormRender = function FormRender(options, element) {
         formData: false, //whether render form data
         showTitle: false //whether render title
     };
-
+    //combine options with default setting, turn true if press the preview btn
     var opts = $.extend(true, defaults, options);
 
     if (opts.formData) {
         var formJson = JSON.parse(opts.formData);
-
+        // console.log(formJson);
         var form = document.createElement('div');
         form.className = "form-render";
 
@@ -28,7 +28,7 @@ var FormRender = function FormRender(options, element) {
             var controlBox = document.createElement('div');
             controlBox.className = 'controlbox';
 
-            var btnClose = document.createElement('span');//关闭按钮
+            var btnClose = document.createElement('span');//close button
             btnClose.className = 'close';
             btnClose.innerHTML = 'X';
 
@@ -51,18 +51,32 @@ var FormRender = function FormRender(options, element) {
             controlData.label = controls[i].label;
             controlData.text = controls[i].text;
             controlData.options = controls[i].options;
-
+            // console.log(controlData);
             if (typeof controlData.label != 'undefined') {
+               //return label with text
                 controlLabel = renderLabel(controlData.label);
                 if (controlData.required) { controlLabel.appendChild(renderRequired()); }
                 liControl.appendChild(controlLabel);
             }
 
-            if (controlData.tag == "SELECT")
+            if (controlData.tag == "SELECT"){
                 liControl.appendChild(renderSelectControl(controlData));
-            else
-                liControl.appendChild(renderControl(controlData));
-            list.appendChild(liControl);
+                list.appendChild(liControl);
+            }
+            else if(controlData.id.startsWith("ColourSelector")){
+               liControl.appendChild(renderSelectColorControl(controlData));
+               liControl.className="container";
+               list.appendChild(liControl);
+            }
+            else if (controlData.id.startsWith("colorslider")){
+               liControl.appendChild(renderColorsliderControl(controlData));
+               liControl.className="slidercontainer";
+               list.appendChild(liControl);
+            }
+            else{
+               liControl.appendChild(renderControl(controlData));
+               list.appendChild(liControl);
+            }
         }
 
         form.appendChild(list);
@@ -97,17 +111,17 @@ function renderControl(controlData) {
         control.innerText = controlData.text;
     }
 
-    if (controlData.options != null && controlData.options != "undifined" && controlData.options.length > 0) {
+    if (controlData.options != null && controlData.options != "undefined" && controlData.options.length > 0) {
         control.className = "control";
         var opItem, options = JSON.parse(controlData.options);
         for (var i = 0; i < options.length; i++) {
             opItem = document.createElement('div');
-            v = document.createElement('input'); //子项控件
+            v = document.createElement('input'); //childcontrol
             v.type = options[i].type;
             v.checked = options[i].checked;
-            v.name = options[i].type + "-" + control.id;
+            v.name = i;
 
-            t = document.createElement('span'); //子项文本
+            t = document.createElement('span'); //child text
             t.innerText = options[i].text;
 
             opItem.appendChild(v);
@@ -120,7 +134,7 @@ function renderControl(controlData) {
     return control;
 }
 
-//呈现选择控件
+//render all controls
 function renderSelectControl(controlData) {
 
     var control = document.createElement(controlData.tag);
@@ -128,7 +142,7 @@ function renderSelectControl(controlData) {
     control.type = controlData.type;
 
     var options = JSON.parse(controlData.options);
-    var op; //选择控件的选项
+    var op; //select options
     for (var i = 0; i < options.length; i++) {
         op = new Option(options[i].text, options[i].value);
         if (options[i].checked) { op.selected = "selected"; }
@@ -138,7 +152,62 @@ function renderSelectControl(controlData) {
     return control;
 }
 
-//呈现控件子项
+//render color selections
+function renderSelectColorControl(controlData){
+
+   var control = document.createElement(controlData.tag);
+    control.id = controlData.id;
+    control.type = controlData.type;
+    var options = JSON.parse(controlData.options);
+    if(options.length>0){
+         control.className = "container row";
+         for (var i = 0; i < options.length; i++) {
+             opItem = document.createElement('div');
+
+             v = document.createElement('input'); //childcontrol
+             v.type = options[i].type;
+             v.checked = options[i].checked;
+             v.name = i;
+             t = document.createElement('div'); //child text
+             t.className="colorsquare";
+             t.name = options[i].type+"-"+control.id;
+             t.style = "background-color:"+options[i].color;
+
+             opItem.appendChild(v);
+             opItem.appendChild(t);
+             opItem.className = "col-lg option";
+             control.appendChild(opItem);
+         }
+
+    }
+    return control;
+}
+
+function renderColorsliderControl(controlData){
+    var control = document.createElement(controlData.tag);
+    var colorRender = document.createElement("div");
+    control.id = controlData.id;
+    control.type = controlData.type;
+    colorRender.className = "colorSliderRender";
+
+    var v,t,options = JSON.parse(controlData.options);
+    opItem = document.createElement('div');
+    opItem.className="slidercontainer";
+   v = document.createElement('input'); //childcontrol
+   v.type = control.type;
+   v.className= "slider";
+   v.min = options[0].min;
+   v.max = options[0].max;
+   colorRender.style = "background-color:"+hslToHex(options[0].color,options[0].value);
+   //change to transition of colors later
+   // v.style = "background-color:"+options[0].color;
+   opItem.appendChild(colorRender);
+   opItem.appendChild(v);
+   control.appendChild(opItem);
+   console.log(opItem);
+   return control;
+}
+//render options in each control
 function renderOption(optionData) {
 
     var timestamp = new Date().getTime();
@@ -168,7 +237,7 @@ function renderOption(optionData) {
     return element;
 }
 
-//呈现标签
+//render labels
 function renderLabel(text) {
 
     var element = document.createElement('label');
@@ -178,7 +247,7 @@ function renderLabel(text) {
     return element;
 }
 
-//呈现验证标签
+//render required label
 function renderRequired() {
 
     var element = document.createElement('span');
