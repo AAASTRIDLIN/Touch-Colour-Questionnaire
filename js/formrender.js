@@ -73,12 +73,15 @@ var FormRender = function FormRender(options, element) {
                liControl.className="slidercontainer";
                list.appendChild(liControl);
             }
+            else if (controlData.id.startsWith("pagebreak")){
+               liControl.appendChild(renderpagebreak(controlData));
+               list.appendChild(liControl);
+            }
             else{
                liControl.appendChild(renderControl(controlData));
                list.appendChild(liControl);
             }
         }
-
         form.appendChild(list);
         element.appendChild(form);
     }
@@ -151,7 +154,19 @@ function renderSelectControl(controlData) {
 
     return control;
 }
+function renderpagebreak(controlData){
+   var control = document.createElement(controlData.tag);
+   control.id = controlData.id;
+   control.type = controlData.type;
+   var options = JSON.parse(controlData.options);
+   console.log(controlData);
 
+   var btn = document.createElement(controlData.type);
+   btn.innerHTML = options[0].value;
+   btn.className = "stepBtn";
+   control.appendChild(btn);
+   return control;
+}
 //render color selections
 function renderSelectColorControl(controlData){
 
@@ -160,7 +175,7 @@ function renderSelectColorControl(controlData){
     control.type = controlData.type;
     var options = JSON.parse(controlData.options);
     if(options.length>0){
-         control.className = "container row";
+         control.className = "row";
          for (var i = 0; i < options.length; i++) {
              opItem = document.createElement('div');
 
@@ -172,7 +187,7 @@ function renderSelectColorControl(controlData){
              t.className="colorsquare";
              t.name = options[i].type+"-"+control.id;
              t.style = "background-color:"+options[i].color;
-
+             console.log(options[i].color);
              opItem.appendChild(v);
              opItem.appendChild(t);
              opItem.className = "col-lg option";

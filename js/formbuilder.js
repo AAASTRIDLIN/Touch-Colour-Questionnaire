@@ -326,7 +326,7 @@
         $("#btn_save").click(function () {
             // formBuilder.save();
             formBuilder.exportSavepage();
-            alert("You have save the changes.")
+            alert("Click ctrl+s to save the page.")
         });
 
         //clear content
@@ -446,9 +446,20 @@
 
             switch (type) {
                 /*single label*/
-                case 'button': tag = "input"; ctrlData.type = type; ctrlData.value = "Button";
+                case 'button':
+                tag = "input";
+                ctrlData.type = type;
+                ctrlData.value = "Button";
                     break;
-                case 'checkbox': tag = "input"; ctrlData.type = type; ctrlData.label = "CheckBox";
+                 case 'pagebreak':
+                 tag = type;
+                 ctrlData.type = "button";
+                 ctrlData.value = "Next";
+                  break;
+                case 'checkbox':
+                tag = "input";
+                ctrlData.type = type;
+                ctrlData.label = "CheckBox";
                     break;
                 case 'datetime-local': tag = "input"; ctrlData.type = type; ctrlData.label = "DateTime";
                     break;
@@ -514,6 +525,7 @@
 
                 case 'textarea': tag = type; ctrlData.label = "TextArea"; ctrlValue = "";
                     break;
+
                 default:
                     break;
             }
@@ -554,7 +566,6 @@
            //argument is control elements
             var attrs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
             var element;
-
             if (tag.toUpperCase() == "CHECKBOXGROUP" || tag.toUpperCase() == "RADIOGROUP" || tag.toUpperCase() == "DIV") {
                 tag = "input";
                 element = createInputGroup(tag, attrs);
@@ -567,10 +578,12 @@
             else if (tag.toUpperCase()=="COLORSLIDER"){
                tag= "input";
                element = createInputSlider(tag,attrs);
-               // console.log(tag);
             }
             else if (tag.toUpperCase() == "SELECT") {
                 element = createSelect(tag, attrs);
+            }
+            else if(tag.toUpperCase()=="PAGEBREAK"){
+               element = createInputpagebreak(tag,attrs);
             }
             else {
                 element = document.createElement(tag);
@@ -588,8 +601,26 @@
                     else { }
                 }
             }
-
             return element;
+        }
+
+        function createInputpagebreak(tag,ctrlData){
+           var timestamp = new Date().getTime();
+           var element = document.createElement("div");//control label
+           element.className = "pagebreak";
+           element.id = tag + "-" + timestamp;
+           element.type = ctrlData.type;
+           if (typeof ctrlData.options == 'undefined') {
+             ctrlData.options="[{\"type\":\""+ctrlData.type+"\",\"name\":\"option-" + ctrlData.type + "\",\"tag\":\""+tag+ "\",\"value\":\""+ctrlData.value+"\"}]";
+
+           }
+           // console.log(ctrlData.options);
+           $(element).attr("data-options",ctrlData.options);
+           var btn = document.createElement("button");
+           btn.type = ctrlData.type;
+           btn.innerHTML = ctrlData.value;
+           $(element).append(btn);
+           return element;
         }
 
         function createInput(tag, ctrlData) {
@@ -701,7 +732,6 @@
               box = document.createElement("div");
               lbl = document.createElement("div");
               colrow = document.createElement("div");
-
 
               option = {};
               option.type = options[i].type;
@@ -886,6 +916,9 @@
                    div += "<div name='rangeInput'>max value<input type='number' name = 'prop-"+dataProp[0].type+"-maxvalue'class='op-value' value ="+dataProp[0].max+" /></div>";
 
                 }
+                else if (id.startsWith("pagebreak")){
+
+                }
                 else{
                    for (var i = 0; i < dataProp.length; i++) {
                        div += "<div name='" + i + "'>";
@@ -918,24 +951,29 @@
             //find label value
             eleModel.label = $(".fb-property ul li").find("#txt_prop_label").val();
 
-            var option={}, options = [];
+            var option, options = [];
 //find option values
             if(id.startsWith("colorslider")){
+               option = {};
                var dataOptions = JSON.parse($(".fb-designer").find("#" + id).attr("data-options"));
                option.color = dataOptions[0].color;
+
                $(".fb-property ul li").find(".prop>div").each(function(i){
                   var $v =  $(this).find(".op-value");
                   option.type = $v.get(0).type;
                   if(i==0) option.min = $v.val();
                   else option.max = $v.val();
+
                });
+               options.push(option);
                $(".fb-designer").find("#" + id+" .slider").attr("min",option.min);
+
               $(".fb-designer").find("#" + id+" .slider").attr("max",option.max);
-              // $(".fb-designer").find("#" + id+" .slider").attr("style","background-image: linear-gradient(to right,"+hslToHex(option.color,option.max)+","+ hslToHex(option.color,option.min)+")");
-              // options.push(option);
            }
             else{
                $(".fb-property ul li").find(".prop>div").each(function (i) {
+                  //change value in html content
+                  option = {};
                    var $v = $(this).find(".op-value");
                    var $t = $(this).find(".op-text");
                    var $c = $(this).find(".op-color");
@@ -946,21 +984,28 @@
                    option.value = i;
                    option.color = $c.val();
 
-                   options.push(option);
+                   //!!someting wrong here pushing the last item for three times
+                   // console.log(option);
 
+                   options.push(option);
+// console.log(options);
                    var op = $(".fb-designer").find("#" + id).children(".option").eq(i);
                    op.find("input").prop("checked", option.checked);
                    op.find("span").html(option.text);
+
                    if(option.color!=undefined){
+                      // console.log(option.color);
                      $(".colorsquare").eq(i).attr("style","background-color:"+option.color);
+                     // $(".op-color").eq(i).attr("value",option.color);
                    }
 
                });
             }
-
+            // console.log(options);
             if (options.length > 0) {
                 eleModel.options = options;
                 var dataOption = JSON.stringify(eleModel.options);
+                // console.log(dataOption);
                 $(".fb-designer").find("#" + id).attr("data-options", dataOption);
 
             }
@@ -1026,7 +1071,6 @@
             var formBuilder = new FormBuilder(options, this);
 
             $(this).data('formBuilder', formBuilder);
-
             return formBuilder;
         });
     };

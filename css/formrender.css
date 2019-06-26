@@ -2,7 +2,7 @@
 * { padding: 0; margin: 0; font-family: Verdana, Geneva, sans-serif; font-size: 13px; font-weight: normal; }
 ul, li { list-style: none; display: block;}
 
-.form-render { width: 600px; height: auto; border: 1px solid #ccc; background-color: #fff; margin: 0 auto; }
+.form-render { width: 65%; height: auto; border: 1px solid #ccc; background-color: #fff; margin: 0 auto; overflow:scroll;}
 .form-render .title { position: relative; /*width: 590px;*/ height: 30px; line-height: 30px; padding: 0 5px; border-bottom: 1px solid #ccc; background-color: rgba(102, 175, 233, 0.6); }
 .form-render .title .controlbox { position: absolute; top: 0; right: 2px; display: block; }
 .form-render .title .controlbox span { padding: 1px 3px; margin-right: 2px; background-color: rgba(255, 0, 0, 0.4); color: #fff; }

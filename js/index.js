@@ -11,7 +11,6 @@ $(document).ready(function ($) {
     $("#btn_view").click(function () {
 
         var formData = formBuilder.data('formBuilder').save();
-        // console.log(formData);
         var frOptions = {
             dataType: 'json',
             formData: formData,

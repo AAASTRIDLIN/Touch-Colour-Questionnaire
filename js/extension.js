@@ -215,58 +215,66 @@ Date.prototype.Diff = function (interval, objDate) {
 
 //conversion of rgb to hsl
 function rgbToHsl(r, g, b) {
-  r /= 255, g /= 255, b /= 255;
-
-  var max = Math.max(r, g, b), min = Math.min(r, g, b);
-  var h, s, l = (max + min) / 2;
-
-  if (max == min) {
-    h = s = 0; // achromatic
+  var min, max, i, l, s, maxcolor, h, rgb = [];
+  rgb[0] = r / 255;
+  rgb[1] = g / 255;
+  rgb[2] = b / 255;
+  min = rgb[0];
+  max = rgb[0];
+  maxcolor = 0;
+  for (i = 0; i < rgb.length - 1; i++) {
+    if (rgb[i + 1] <= min) {min = rgb[i + 1];}
+    if (rgb[i + 1] >= max) {max = rgb[i + 1];maxcolor = i + 1;}
   }
-  else {
-       var d = max - min;
-       s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-
-       switch (max) {
-         case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-         case g: h = (b - r) / d + 2; break;
-         case b: h = (r - g) / d + 4; break;
-       }
-
-       h /= 6;
-    }
-   return [ h, s, l ];
-}
-//convert hsl to rgb
-function hslToRgb(hsl) {
- var temphsl=hsl.split(",");
- var h=temphsl[0],s=temphsl[1],l=temphsl[2];
-  var r, g, b;
-
-  if (s == 0) {
-    r = g = b = l; // achromatic
+  if (maxcolor == 0) {
+    h = (rgb[1] - rgb[2]) / (max - min);
+  }
+  if (maxcolor == 1) {
+    h = 2 + (rgb[2] - rgb[0]) / (max - min);
+  }
+  if (maxcolor == 2) {
+    h = 4 + (rgb[0] - rgb[1]) / (max - min);
+  }
+  if (isNaN(h)) {h = 0;}
+  h = h * 60;
+  if (h < 0) {h = h + 360; }
+  l = (min + max) / 2;
+  if (min == max) {
+    s = 0;
   } else {
-    function hue2rgb(p, q, t) {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1/6) return p + (q - p) * 6 * t;
-      if (t < 1/2) return q;
-      if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-      return p;
+    if (l < 0.5) {
+      s = (max - min) / (max + min);
+    } else {
+      s = (max - min) / (2 - max - min);
     }
-
-    var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-    var p = 2 * l - q;
-
-    r = hue2rgb(p, q, h + 1/3);
-    g = hue2rgb(p, q, h);
-    b = hue2rgb(p, q, h - 1/3);
   }
-  console.log(r);
-  var rgb = r * 255+"," +g * 255+","+ b * 255
-  return rgb;
+  s = s;
+  return {h : h, s : s, l : l};
 }
 
+//convert hsl to rgb
+function hslToRgb(hue, sat, light) {
+  var t1, t2, r, g, b;
+  hue = hue / 60;
+  if ( light <= 0.5 ) {
+    t2 = light * (sat + 1);
+  } else {
+    t2 = light + sat - (light * sat);
+  }
+  t1 = light * 2 - t2;
+  r = hueToRgb(t1, t2, hue + 2) * 255;
+  g = hueToRgb(t1, t2, hue) * 255;
+  b = hueToRgb(t1, t2, hue - 2) * 255;
+  return {r : r, g : g, b : b};
+}
+function hueToRgb(t1, t2, hue) {
+  if (hue < 0) hue += 6;
+  if (hue >= 6) hue -= 6;
+  if (hue < 1) return (t2 - t1) * hue + t1;
+  else if(hue < 3) return t2;
+  else if(hue < 4) return (t2 - t1) * (4 - hue) + t1;
+  else return t1;
+}
 function hslToHex(hsl,l) {
    var temphsl=hsl.split(",");
    var h=temphsl[0],s=temphsl[1];
@@ -296,4 +304,19 @@ function hslToHex(hsl,l) {
     return hex.length === 1 ? '0' + hex : hex;
   };
   return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}
+
+function getRGB(str){
+  var match = str.match(/rgba?\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)?(?:, ?(\d(?:\.\d?))\))?/);
+  return match ? {
+    red: match[1],
+    green: match[2],
+    blue: match[3]
+  } : {};
+}
+function toHslString(hsl,value) {
+    return "hsl(" + hsl.h + ", " + Math.round(hsl.s * 100) + "%, " + Math.round(value) + "%)";
+}
+function toRgbString (rgb) {
+  return "rgb(" + rgb.r + ", " + rgb.g + ", " + rgb.b + ")";
 }

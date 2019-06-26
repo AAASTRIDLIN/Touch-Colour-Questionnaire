@@ -1,0 +1,72 @@
+.form-save{
+   background-color: #e8eef7;
+}
+.form-page{
+   display: none;
+   padding: 20px 10px;
+   background-color: #e8eef7;
+}
+
+.form-page .colorsquare{
+   width: 50px;
+   height: 50px;
+   margin: 10px auto;
+}
+.form-page .colorsquare_lig{
+   width: 50px;
+   height: 50px;
+   margin: 10px auto;
+}
+
+.form-page label{
+   font-size: 18px;
+   margin-left: 5px;
+}
+
+input[type='checkbox']{
+   position:relative;
+   left: 50%;
+   margin: -6.4px;
+}
+
+.form-save input[type='radio']{
+   position:relative;
+   left: 50%;
+   margin: -6.4px;
+}
+.form-container label{
+   font-size: 30px;
+}
+
+.colorSliderRender{
+   width:100px;
+   height:100px;
+   margin: 10px auto;
+   display: block;
+}
+
+.eachpagecomponent h{
+   font-size: 50px;
+}
+.eachpagecomponent{
+   background-color: #ffffff;
+   margin: 0px auto;
+   width: 70%;
+   min-width: 300px;
+}
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.stepbtn{
+   width: 20%;
+   margin: auto;
+   text-align: center;
+}
