@@ -44,6 +44,15 @@ input[type='checkbox']{
    margin: 10px auto;
    display: block;
 }
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #c0d8c6;
+}
 
 .eachpagecomponent h{
    font-size: 50px;

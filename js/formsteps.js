@@ -17,6 +17,7 @@ function showTab(n) {
      } else {
       document.getElementById("nextBtn").innerHTML = "Next";
      }
+     fixStepIndicator(n)
  }
 
   // ... and run a function that displays the correct step indicator:
@@ -31,7 +32,7 @@ function slideColourRender(){
          if($c.attr("class") == "container"){
             input = $(this).find(".option");
             colour = checkedBox(input);
-            console.log(colour);
+            // console.log(colour);
          }
       })
       if(colour!=undefined && colour != null){
@@ -125,4 +126,14 @@ function validateForm() {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
 }
