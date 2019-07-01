@@ -6,16 +6,17 @@ function showTab(n) {
   var x = document.getElementsByClassName("form-page");
   if(x.length>0){
      x[n].style.display = "block";
-     // ... and fix the Previous/Next buttons:
+     //display of buttons
      if (n == 0) {
       document.getElementById("prevBtn").style.display = "none";
+      $("#submitBtn").css("display","none");
+      $("#nextBtn").css("display","inline");
      } else {
       document.getElementById("prevBtn").style.display = "inline";
      }
      if (n == (x.length - 1)) {
-      document.getElementById("nextBtn").innerHTML = "Submit";
-     } else {
-      document.getElementById("nextBtn").innerHTML = "Next";
+       $("#submitBtn").css("display","inline");
+       $("#nextBtn").css("display","none");
      }
      fixStepIndicator(n)
  }
@@ -64,9 +65,7 @@ function ligColourchange(slider,colour){
    var hsl =rgbToHsl(rgb.red,rgb.green,rgb.blue);
    //convert hsl to new rgb
    var nrgb = hslToRgb(hsl.h,hsl.s,lightness/100);
-   console.log(nrgb);
    var rgbtoString = toRgbString(nrgb);
-   console.log(rgbtoString);
    $(slider).find(".colorSliderRender").attr("style","background-color:"+ rgbtoString);
 }
 //change in slider in real-time
@@ -108,20 +107,39 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
+  var x, y, i, valid = false;
   x = document.getElementsByClassName("form-page");
   y = x[currentTab].getElementsByTagName("input");
+  //no question
+  if(y.length == 0){
+     return true;
+ }
+ //handle last question
+ if(currentTab==x.length-1){
+    var radiovalid = true;
+    $(".rating").each(function(i){
+      var input = $(this).find("input");
+      var radio = false;
+      for(i=0;i<input.length;i++){
+         if(input[i].checked){
+            radio = true;
+         }
+      }
+      if(!radio){
+         radiovalid = false;
+      }
+   });
+   return radiovalid;
+}
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
-    }
+     if(y[i].checked){
+        valid = true;
+     }
   }
-  // If the valid status is true, mark the step as finished and valid:
+  if(!valid){
+      alert("You have to complete the question before click 'next'");
+ }
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
@@ -136,4 +154,56 @@ function fixStepIndicator(n) {
   }
   //... and adds the "active" class to the current step:
   x[n].className += " active";
+}
+
+$("form").submit(function(event){
+   if(!validateForm()){
+      alert("You have to complete the questionnaire before submission.");
+      return false;
+   };
+   event.preventDefault();
+   var form = $('form').serialize();
+   console.log(form);
+   addData(form);
+   alert("Thank you for your participation");
+   //!! handle last questions
+   $("#result").css("display","inline");
+})
+
+function addData(form){
+   var table = $("#quan");
+   var quatable = $("#qua");
+   var data = form.split("&");
+   var row = [];
+   var num = 0;
+   for(i=0;i<data.length-6;i++){
+      var tr = document.createElement("tr");
+      var object = document.createElement("td");
+      var cth = document.createElement("td");
+      var lth = document.createElement("td");
+      object.innerHTML = ++num;
+      $(tr).append(object);
+      var colour = data[i].split("=")[1];
+      cth.innerHTML = colour;
+      $(tr).append(cth);
+      i++;
+      var lig = data[i].split("=")[1];
+      lth.innerHTML = lig;
+      $(tr).append(lth);
+      $(table).append(tr);
+   }
+//!!!deubg!!
+   for(i=data.length-6;i<data.length;i++){
+      console.log("here");
+      var tr = document.createElement("tr");
+      var trID = document.createElement("td");
+      var trAnswer = document.createElement("td");
+      var answer = data[i].split("=");
+      trID.innerHTML = answer[0];
+      trAnswer.innerHTML = answer[1];
+      $(tr).append(trID);
+      $(tr).append(trAnswer);
+      $(quatable).append(tr);
+   }
+   $("#result").append(form);
 }

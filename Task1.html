@@ -188,7 +188,7 @@
             <div id="colorslider-1561374041149">
                <div class="slidercontainer">
                   <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
-                  <input type="range" class="slider" min="0" max="100"></div>
+                  <input type="range" class="slider" min="0" max="100" name="OB2lig"></div>
             </div>
          </li>
       </div>
@@ -263,7 +263,23 @@
       <div class="stepbtn">
          <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-outline-secondary" style="display: inline;">Previous</button>
          <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-outline-secondary">Next</button>
+         <button type="submit" id="submitBtn" class="btn btn-outline-secondary">Submit</button>
       </div>
+      <div id="result">Results:
+         <table id="quan">
+           <tr>
+             <th>Object</th>
+             <th>Colour</th>
+             <th>Lightness</th>
+           </tr>
+          </table>
+          <table id="qua">
+            <tr>
+              <th>Question</th>
+              <th>Answer</th>
+            </tr>
+           </table>
+     </div>
       <div style="text-align:center;margin-top:40px;">
          <span class="step finish"></span>
          <span class="step"></span>
