@@ -1,2 +1,1 @@
-# jQuery.FormBuilder
-FormBuilder is a jQuery plugin to dragging control as well as Visual Studio on web page.
+The questionnaire can be opened by double clicking the TASK1.html after having the repository downloaded. The code for Arduino and the control is stored in the DeviceControl folder. Please ignore the index.html.
