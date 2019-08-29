@@ -4,6 +4,7 @@ slideColourRender();
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("form-page");
+  console.log(x.length+"/"+currentTab);
   if(x.length>0){
      x[n].style.display = "block";
      //display of buttons
@@ -11,18 +12,19 @@ function showTab(n) {
       document.getElementById("prevBtn").style.display = "none";
       $("#submitBtn").css("display","none");
       $("#nextBtn").css("display","inline");
-     } else {
-      document.getElementById("prevBtn").style.display = "inline";
      }
-     if (n == (x.length - 1)) {
+     else if (n == (x.length - 1)) {
        $("#submitBtn").css("display","inline");
        $("#nextBtn").css("display","none");
+     }
+     else{
+       $("#prevBtn").css("display","inline");
+       $("#nextBtn").css("display","inline");
+       $("#submitBtn").css("display","none");
      }
      fixStepIndicator(n)
  }
 
-  // ... and run a function that displays the correct step indicator:
-  // fixStepIndicator(n)
 }
 
 function slideColourRender(){
@@ -36,9 +38,12 @@ function slideColourRender(){
             // console.log(colour);
          }
       })
+      var slider = $(this).find(".slidercontainer");
+      if(i ==currentTab){
+        $(slider).find('input[type=range]').val(50);
+      }
       if(colour!=undefined && colour != null){
          //combine lightness
-         var slider = $(this).find(".slidercontainer");
          ligColourchange(slider,colour);
       }
       else{
@@ -56,6 +61,7 @@ function checkedBox(input){
    }
    return colour;
 }
+
 function ligColourchange(slider,colour){
    //get lightness from slider
    var lightness = $(slider).find('input[type=range]').val();
@@ -65,28 +71,37 @@ function ligColourchange(slider,colour){
    var hsl =rgbToHsl(rgb.red,rgb.green,rgb.blue);
    //convert hsl to new rgb
    var nrgb = hslToRgb(hsl.h,hsl.s,lightness/100);
+   var dark = toRgbString(hslToRgb(hsl.h,hsl.s,0.3));
+   var light = toRgbString(hslToRgb(hsl.h,hsl.s,0.7));
+
    var rgbtoString = toRgbString(nrgb);
    $(slider).find(".colorSliderRender").attr("style","background-color:"+ rgbtoString);
+   $(slider).find(".slidedark").attr("style","background-color:"+ dark);
+   $(slider).find(".slidedark").css("display","inline-block")
+   $(slider).find(".slidelight").attr("style","background-color:"+ light);
+   $(slider).find(".slidelight").css("display","inline-block")
+
 }
 //change in slider in real-time
 $('input[type=range]').on('input',
     function(){
-      console.log("change");
+      // console.log("change");
       var render = $('.form-save .form-page').eq(currentTab);
       var $colour = $(render).find(".container div");
       var colour = checkedBox($colour);
-      console.log(colour);
+      // console.log(colour);
       ligColourchange($(render).find(".slidercontainer"),colour);
  });
+
 //only keep one option and change colour of slider
 $('.container input[type=radio]').change(
     function(){
-   //    //only keep one checkbox
-   // $('.form-save .form-page').eq(currentTab).find("input[type=checkbox]").not(this).prop('checked', false);
       slideColourRender();
  });
 
 function nextPrev(n) {
+  href = "popup.html";
+
   // This function will figure out which  to display
   var x = document.getElementsByClassName("form-page");
   // Exit the function if any field in the current tab is invalid:
@@ -95,13 +110,12 @@ function nextPrev(n) {
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
-  // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
-    //...the form gets submitted:
-    document.getElementById("regForm").submit();
-    return false;
-  }
+
   // Otherwise, display the correct tab:
+  if(n==1&&currentTab!=1&&currentTab!=x.length-1){
+    centeredPopup(href,'myWindow','400','300','yes')
+  }
+
   showTab(currentTab);
 }
 
@@ -177,6 +191,7 @@ function addData(form){
    var row = [];
    var num = 0;
    for(i=0;i<data.length-6;i++){
+
       var tr = document.createElement("tr");
       var object = document.createElement("td");
       var cth = document.createElement("td");
@@ -192,9 +207,8 @@ function addData(form){
       $(tr).append(lth);
       $(table).append(tr);
    }
-//!!!deubg!!
+
    for(i=data.length-6;i<data.length;i++){
-      console.log("here");
       var tr = document.createElement("tr");
       var trID = document.createElement("td");
       var trAnswer = document.createElement("td");
@@ -206,4 +220,13 @@ function addData(form){
       $(quatable).append(tr);
    }
    $("#result").append(form);
+}
+
+var popupWindow = null;
+function centeredPopup(url,winName,w,h,scroll){
+  LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+  TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+  settings =
+  'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+  popupWindow = window.open(url,winName,settings)
 }

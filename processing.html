@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="js/processing-1.0.0.min.js"></script>
+    <script type="text/processing" data-processing-target="rotationbtn">
+      RectButton rect1;
+      PFont font,font2;
+      void setup(){
+        size(400,300);
+        color baseColor = color(102);
+
+        currentcolor = baseColor;
+        buttoncolor = color(102);
+        highlight = color(51);
+        rect1 = new RectButton(150, 20, 100, buttoncolor, highlight);
+      }
+      void draw(){
+
+      }
+    </script>
+    <title>rotation control</title>
+  </head>
+  <body>
+    <canvas id="rotationbtn" width="400" height="300"></canvas>
+  </body>
+</html>

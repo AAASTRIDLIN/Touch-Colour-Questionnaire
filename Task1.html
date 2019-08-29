@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <title>Builder</title>
+    <title>Task</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/formbuilder.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/formrender.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome/font-awesome.min.css">
@@ -12,14 +12,6 @@
 </head>
 
 <body>
-<!--
-
-   <script src="js/formbuilder.js"></script>
-   <script src="js/formrender.js"></script>
-   <script src="js/index.js"></script>
-   <script src="js/saveForm.js"></script> -->
-
-
 <form class="form-save">
    <div class="form-page" style="display: none;">
       <div class="eachpagecomponent">
@@ -34,69 +26,121 @@
       </div>
    <div class="eachpagecomponent">
       <li id="ColourSelector-OB1" >
-         <label>Options of colour</label>
+         <label>Choose a colour and lightness that you think matches the object</label>
          <div class="container">
             <div class="row">
-               <div class="col-lg option">
-                  <input type="radio" name="OB1" value="red">
-                  <div class="colorsquare" style="background-color: rgb(232, 26, 23);"></div>
-               </div>
-               <div class="col-lg option">
-                  <input type="radio" name="OB1" value="yellow">
-                  <div class="colorsquare" style="background-color: rgb(255, 255, 0);"></div>
-               </div>
-               <div class="col-lg option">
-                  <input type="radio" name="OB1" value="aquamarine">
-                  <div class="colorsquare" style="background-color: rgb(0, 225, 255);">
-                  </div>
-               </div>
-               <div class="col-lg option">
+              <div class="col">
+                <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+              </div>
+              <div class=" col option">
+                 <input type="radio" name="OB1" value="red">
+                <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+              </div>
+              <div class="col">
+                <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+              </div>
+              <div class="col">
+                <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+              </div>
+              <div class="col option">
+                <input type="radio" name="OB1" value="yellow">
+                <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+              </div>
+              <div class="col">
+                <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="blue">
                   <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
                   </div>
-               </div>
-               <div class="col-lg option">
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="pink">
-                  <div class="colorsquare" style="background-color: rgb(230, 25, 100);">
-                  </div>
-               </div>
-               <div class="col-lg option">
+                  <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="grey">
                   <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
                   </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-lg option">
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="orange">
-                  <div class="colorsquare" style="background-color:rgb(255, 128, 0);"></div>
-               </div>
-               <div class="col-lg option">
+                  <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="green">
-                  <div class="colorsquare" style="background-color: rgb(95, 181, 74);">
-                  </div>
-               </div>
-               <div class="col-lg option">
+                  <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="sky">
-                  <div class="colorsquare" style="background-color: rgb(0, 195, 255);">
-                  </div>
-               </div>
-               <div class="col-lg option">
+                  <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="purple">
-                  <div class="colorsquare" style="background-color: rgb(152, 82, 173);">
-                  </div>
-               </div>
-               <div class="col-lg option">
+                  <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                </div>
+                <div class="col option">
                   <input type="radio" name="OB1" value="brown">
-                  <div class="colorsquare" style="background-color: rgb(182, 122, 73);">
-                  </div>
-               </div>
-               <div class="col-lg option">
-                  <input type="radio" name="OB1" value="black">
-                  <div class="colorsquare" style="background-color: rgb(72, 66, 66);">
-                  </div>
-               </div>
-            </div>
+                  <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                </div>
+                <div class="col">
+                  <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                </div>
+              </div>
          </div>
       </li>
    </div>
@@ -104,7 +148,12 @@
       <li class="slidercontainer"><label>Range of colour lightness</label>
          <div id="colorslider-1561374036414">
             <div class="slidercontainer">
+              <div class="slidedark">
+              </div>
                <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+               <div class="slidelight">
+
+               </div>
                <input type="range" class="slider" name="OB1lig" min="0" max="100"></div></div>
       </li>
    </div>
@@ -116,116 +165,3235 @@
       </div>
       <div class="eachpagecomponent">
          <li id="ColourSelector-OB2" >
-            <label>Options of colour</label>
+            <label>Choose a colour and lightness that you think matches the object</label>
             <div class="container">
                <div class="row">
-                  <div class="col-lg option">
-                     <input type="radio" name="OB2" value="red">
-                     <div class="colorsquare" style="background-color: rgb(232, 26, 23);"></div>
-                  </div>
-                  <div class="col-lg option">
-                     <input type="radio" name="OB2" value="yellow">
-                     <div class="colorsquare" style="background-color: rgb(255, 255, 0);"></div>
-                  </div>
-                  <div class="col-lg option">
-                     <input type="radio" name="OB2" value="aquamarine">
-                     <div class="colorsquare" style="background-color: rgb(0, 225, 255);">
-                     </div>
-                  </div>
-                  <div class="col-lg option">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB2" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB2" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="blue">
                      <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
                      </div>
-                  </div>
-                  <div class="col-lg option">
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="pink">
-                     <div class="colorsquare" style="background-color: rgb(230, 25, 100);">
-                     </div>
-                  </div>
-                  <div class="col-lg option">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="grey">
                      <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
                      </div>
-                  </div>
-               </div>
-               <div class="row">
-                  <div class="col-lg option">
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="orange">
-                     <div class="colorsquare" style="background-color:rgb(255, 128, 0);"></div>
-                  </div>
-                  <div class="col-lg option">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="green">
-                     <div class="colorsquare" style="background-color: rgb(95, 181, 74);">
-                     </div>
-                  </div>
-                  <div class="col-lg option">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="sky">
-                     <div class="colorsquare" style="background-color: rgb(0, 195, 255);">
-                     </div>
-                  </div>
-                  <div class="col-lg option">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="purple">
-                     <div class="colorsquare" style="background-color: rgb(152, 82, 173);">
-                     </div>
-                  </div>
-                  <div class="col-lg option">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
                      <input type="radio" name="OB2" value="brown">
-                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);">
-                     </div>
-                  </div>
-                  <div class="col-lg option">
-                     <input type="radio" name="OB2" value="black">
-                     <div class="colorsquare" style="background-color: rgb(72, 66, 66);">
-                     </div>
-                  </div>
-               </div>
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
             </div>
          </li>
       </div>
       <div class="eachpagecomponent">
-         <li class="slidercontainer">
-            <label>Range of colour lightness</label>
-            <div id="colorslider-1561374041149">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
                <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
                   <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
-                  <input type="range" class="slider" min="0" max="100" name="OB2lig"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB2lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 3</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB3" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB3" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB3" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB3" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
             </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB3lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 4</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB4" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB4" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB4" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB4" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB4lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 5</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB5" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB5" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB5" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB5" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB5lig" min="0" max="100"></div></div>
          </li>
       </div>
    </div>
    <div class="form-page" style="display: none;">
       <div class="eachpagecomponent">
-         <li class="rating">
-            <label for="">During the experiment, I felt I KNEW FOR
-            CERTAIN what the color should be.</label>
-            <p><input type="radio" name="Q1" value="stronglyagree"> Strongly agree</p>
-            <p><input type="radio" name="Q1" value="moderatelyagree"> Moderately Agree</p>
-            <p><input type="radio" name="Q1" value="mildlyagree"> Mildly Agree</p>
-            <p><input type="radio" name="Q1" value="mildlydisagree"> Mildly Disagree</p>
-            <p><input type="radio" name="Q1" value="stronglydisagree"> Strongly Disagree</p>
+         <li><h id="h-1561374058144">Object 6</h>
          </li>
       </div>
       <div class="eachpagecomponent">
-         <li class="rating">
-            <label for="">During the experiment, I felt I was GUESSING
-            what the color should be.</label>
-            <p><input type="radio" name="Q2" value="stronglyagree"> Strongly agree</p>
-            <p><input type="radio" name="Q2" value="moderatelyagree"> Moderately Agree</p>
-            <p><input type="radio" name="Q2" value="mildlyagree"> Mildly Agree</p>
-            <p><input type="radio" name="Q2" value="mildlydisagree"> Mildly Disagree</p>
-            <p><input type="radio" name="Q2" value="stronglydisagree"> Strongly Disagree</p>
+         <li id="ColourSelector-OB6" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB6" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB6" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB6" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
          </li>
       </div>
       <div class="eachpagecomponent">
-         <li class="rating">
-            <label for="">Whenever I touch objects, I AUTOMATICALLY associate the touch with a particular color</label>
-            <p><input type="radio" name="Q3" value="stronglyagree"> Strongly agree</p>
-            <p><input type="radio" name="Q3" value="moderatelyagree"> Moderately Agree</p>
-            <p><input type="radio" name="Q3" value="mildlyagree"> Mildly Agree</p>
-            <p><input type="radio" name="Q3" value="mildlydisagree"> Mildly Disagree</p>
-            <p><input type="radio" name="Q3" value="stronglydisagree"> Strongly Disagree</p>
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB6lig" min="0" max="100"></div></div>
          </li>
       </div>
+   </div>
+
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 7</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB7" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB7" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB7" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB7" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB7lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 8</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB8" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB8" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB8" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB8" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB8lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 9</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB9" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB9" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB9" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB9" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB9lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 10</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB10" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB10" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB10" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB10" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB10lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 11</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB11" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB11" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB11" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB11" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB11lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 12</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB12" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB12" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB12" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB12" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB12lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 13</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB13" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB13" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB13" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB13" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB13lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 14</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB14" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB14" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB14" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB14" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB14lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 15</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB15" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB15" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB15" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB15" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB15lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 16</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB16" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB16" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB16" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB16" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB16lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 17</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB17" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB17" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB17" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB17" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB17lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 18</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB18" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB18" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB18" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB18" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB18lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 19</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB19" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB19" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB19" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB19" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB19lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 20</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB20" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB20" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB20" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB20" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB20lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+   <div class="form-page" style="display: none;">
+      <div class="eachpagecomponent">
+         <li><h id="h-1561374058144">Object 21</h>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li id="ColourSelector-OB21" >
+            <label>Choose a colour and lightness that you think matches the object</label>
+            <div class="container">
+               <div class="row">
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                 </div>
+                 <div class=" col option">
+                    <input type="radio" name="OB21" value="red">
+                   <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                 </div>
+                 <div class="col option">
+                   <input type="radio" name="OB21" value="yellow">
+                   <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                 </div>
+                 <div class="col">
+                   <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                 </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="blue">
+                     <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="pink">
+                     <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="grey">
+                     <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="orange">
+                     <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                   </div>
+                 </div>
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="green">
+                     <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="sky">
+                     <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                   </div>
+                 </div>
+
+                 <div class="row">
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="purple">
+                     <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                   </div>
+                   <div class="col option">
+                     <input type="radio" name="OB21" value="brown">
+                     <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                   </div>
+                   <div class="col">
+                     <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                   </div>
+                 </div>
+            </div>
+         </li>
+      </div>
+      <div class="eachpagecomponent">
+         <li class="slidercontainer"><label>Range of colour lightness</label>
+            <div id="colorslider-1561374036414">
+               <div class="slidercontainer">
+                 <div class="slidedark">
+                 </div>
+                  <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                  <div class="slidelight">
+
+                  </div>
+                  <input type="range" class="slider" name="OB21lig" min="0" max="100"></div></div>
+         </li>
+      </div>
+   </div>
+
+      <div class="form-page" style="display: none;">
+         <div class="eachpagecomponent">
+            <li><h id="h-1561374058144">Object 22</h>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li id="ColourSelector-OB22" >
+               <label>Choose a colour and lightness that you think matches the object</label>
+               <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                    </div>
+                    <div class=" col option">
+                       <input type="radio" name="OB22" value="red">
+                      <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                    </div>
+                    <div class="col option">
+                      <input type="radio" name="OB22" value="yellow">
+                      <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="blue">
+                        <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="pink">
+                        <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="grey">
+                        <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="orange">
+                        <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="green">
+                        <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="sky">
+                        <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="purple">
+                        <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB22" value="brown">
+                        <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                      </div>
+                    </div>
+               </div>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li class="slidercontainer"><label>Range of colour lightness</label>
+               <div id="colorslider-1561374036414">
+                  <div class="slidercontainer">
+                    <div class="slidedark">
+                    </div>
+                     <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                     <div class="slidelight">
+
+                     </div>
+                     <input type="range" class="slider" name="OB22lig" min="0" max="100"></div></div>
+            </li>
+         </div>
+      </div>
+      <div class="form-page" style="display: none;">
+         <div class="eachpagecomponent">
+            <li><h id="h-1561374058144">Object 23</h>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li id="ColourSelector-OB23" >
+               <label>Choose a colour and lightness that you think matches the object</label>
+               <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                    </div>
+                    <div class=" col option">
+                       <input type="radio" name="OB23" value="red">
+                      <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                    </div>
+                    <div class="col option">
+                      <input type="radio" name="OB23" value="yellow">
+                      <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="blue">
+                        <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="pink">
+                        <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="grey">
+                        <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="orange">
+                        <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="green">
+                        <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="sky">
+                        <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="purple">
+                        <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB23" value="brown">
+                        <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                      </div>
+                    </div>
+               </div>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li class="slidercontainer"><label>Range of colour lightness</label>
+               <div id="colorslider-1561374036414">
+                  <div class="slidercontainer">
+                    <div class="slidedark">
+                    </div>
+                     <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                     <div class="slidelight">
+
+                     </div>
+                     <input type="range" class="slider" name="OB23lig" min="0" max="100"></div></div>
+            </li>
+         </div>
+      </div>
+      <div class="form-page" style="display: none;">
+         <div class="eachpagecomponent">
+            <li><h id="h-1561374058144">Object 24</h>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li id="ColourSelector-OB24" >
+               <label>Choose a colour and lightness that you think matches the object</label>
+               <div class="container">
+                  <div class="row">
+                    <div class="col">
+                      <div class="colorsquaredark" style="background-color: rgb(153, 0, 0);"></div>
+                    </div>
+                    <div class=" col option">
+                       <input type="radio" name="OB24" value="red">
+                      <div class="colorsquare" style="background-color: rgb(255, 0, 0);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquarelig" style="background-color: rgb(255, 102, 102);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquaredark" style="background-color: rgb(152, 152, 1);"></div>
+                    </div>
+                    <div class="col option">
+                      <input type="radio" name="OB24" value="yellow">
+                      <div class="colorsquare" style="background-color: rgb(255, 255, 1);"></div>
+                    </div>
+                    <div class="col">
+                      <div class="colorsquarelig" style="background-color: rgb(254, 254, 103);"></div>
+                    </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(34, 54, 119);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="blue">
+                        <div class="colorsquare" style="background-color: rgb(56, 89, 199);">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(136, 156, 221);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(153, 0, 64);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="pink">
+                        <div class="colorsquare" style="background-color: rgb(255, 0, 105);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 102, 166);"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(0,0,0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="grey">
+                        <div class="colorsquare" style="background-color: rgb(128, 128, 128);">
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 255, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(153, 61, 0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="orange">
+                        <div class="colorsquare" style="background-color:rgb(255, 102, 0);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(255, 163, 102);"></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(61, 153, 0);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="green">
+                        <div class="colorsquare" style="background-color: rgb(101, 255, 0);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(163, 255, 102);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(0, 153, 153);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="sky">
+                        <div class="colorsquare" style="background-color: rgb(1, 255, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(102, 255, 224);"></div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(66, 0, 153);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="purple">
+                        <div class="colorsquare" style="background-color: rgb(111, 0, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(168, 102, 255);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquaredark" style="background-color: rgb(109, 73, 44);"></div>
+                      </div>
+                      <div class="col option">
+                        <input type="radio" name="OB24" value="brown">
+                        <div class="colorsquare" style="background-color: rgb(182, 122, 73);"></div>
+                      </div>
+                      <div class="col">
+                        <div class="colorsquarelig" style="background-color: rgb(211, 175, 146);"></div>
+                      </div>
+                    </div>
+               </div>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li class="slidercontainer"><label>Range of colour lightness</label>
+               <div id="colorslider-1561374036414">
+                  <div class="slidercontainer">
+                    <div class="slidedark">
+                    </div>
+                     <div class="colorSliderRender" style="background-color: rgb(255, 0, 0);"></div>
+                     <div class="slidelight">
+
+                     </div>
+                     <input type="range" class="slider" name="OB24lig" min="0" max="100"></div></div>
+            </li>
+         </div>
+      </div>
+      <div class="form-page" style="display: none;">
+         <div class="eachpagecomponent">
+            <li class="rating">
+               <label for="">During the experiment, I felt I KNEW FOR
+               CERTAIN what the color should be.</label>
+               <p><input type="radio" name="Q1" value="stronglyagree"> Strongly agree</p>
+               <p><input type="radio" name="Q1" value="moderatelyagree"> Moderately Agree</p>
+               <p><input type="radio" name="Q1" value="mildlyagree"> Mildly Agree</p>
+               <p><input type="radio" name="Q1" value="mildlydisagree"> Mildly Disagree</p>
+               <p><input type="radio" name="Q1" value="stronglydisagree"> Strongly Disagree</p>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li class="rating">
+               <label for="">During the experiment, I felt I was GUESSING
+               what the color should be.</label>
+               <p><input type="radio" name="Q2" value="stronglyagree"> Strongly agree</p>
+               <p><input type="radio" name="Q2" value="moderatelyagree"> Moderately Agree</p>
+               <p><input type="radio" name="Q2" value="mildlyagree"> Mildly Agree</p>
+               <p><input type="radio" name="Q2" value="mildlydisagree"> Mildly Disagree</p>
+               <p><input type="radio" name="Q2" value="stronglydisagree"> Strongly Disagree</p>
+            </li>
+         </div>
+         <div class="eachpagecomponent">
+            <li class="rating">
+               <label for="">Whenever I touch objects, I AUTOMATICALLY associate the touch with a particular color</label>
+               <p><input type="radio" name="Q3" value="stronglyagree"> Strongly agree</p>
+               <p><input type="radio" name="Q3" value="moderatelyagree"> Moderately Agree</p>
+               <p><input type="radio" name="Q3" value="mildlyagree"> Mildly Agree</p>
+               <p><input type="radio" name="Q3" value="mildlydisagree"> Mildly Disagree</p>
+               <p><input type="radio" name="Q3" value="stronglydisagree"> Strongly Disagree</p>
+            </li>
+         </div>
       <div class="eachpagecomponent">
          <li class="rating">
             <label for="">Whenever I touch objects, I NEVER automatically associate the touch with a particular
@@ -285,6 +3453,29 @@
          <span class="step"></span>
          <span class="step"></span>
          <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+         <span class="step"></span>
+
       </div>
    </form>
 </body>
